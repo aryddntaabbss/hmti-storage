@@ -20,24 +20,23 @@
             <table class="min-w-full text-sm text-gray-700">
                 <thead class=" text-gray-900">
                     <tr class="border bg-gray-200 border-gray-300">
-                        <th class="px-6 py-3 text-left  border border-gray-300">No</th>
-                        <th class="px-6 py-3 text-left  border border-gray-300">Nama Project</th>
-                        <th class="px-6 py-3 text-left  border border-gray-300">Deskripsi</th>
-                        <th class="px-6 py-3 text-left  border border-gray-300">Link</th>
-                        <th class="px-6 py-3 text-left  border border-gray-300">Gambar</th>
-                        <th class="px-6 py-3 text-left  border border-gray-300">Action</th>
+                        <th class="px-2 py-2 text-left  border border-gray-300">No</th>
+                        <th class="px-2 py-2 text-left  border border-gray-300">Nama Project</th>
+                        <th class="px-2 py-2 text-left  border border-gray-300">Deskripsi</th>
+                        <th class="px-2 py-2 text-left  border border-gray-300">Link</th>
+                        <th class="px-2 py-2 text-left  border border-gray-300">Gambar</th>
+                        <th class="px-2 py-2 text-left  border border-gray-300">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($projects as $index => $project)
                     <tr class="border hover:bg-gray-50">
-                        <td class="px-6 py-4 border border-gray-300">{{ $index + 1 }}</td>
-                        <td class="px-6 py-4 border border-gray-300">{{ $project->name }}</td>
-                        <td class="px-6 py-4 border border-gray-300">{{ $project->description }}</td>
-                        <td class="px-6 py-4 border border-gray-300">
+                        <td class="px-2 py-2 border border-gray-300">{{ $index + 1 }}</td>
+                        <td class="px-2 py-2 border border-gray-300">{{ $project->name }}</td>
+                        <td class="px-2 py-2 border border-gray-300">{{ Str::limit($project->description, 35) }}</td>
+                        <td class="px-2 py-2 border border-gray-300">
                             <a href="{{ $project->link }}" class="text-blue-600 hover:text-blue-800"
-                                target="_blank">Lihat
-                                Project</a>
+                                target="_blank">{{ $project->link }}</a>
                         </td>
                         <td class="px-6 py-4 border border-gray-300">
                             <img src="{{ Storage::url($project->image) }}" alt="Gambar Proyek"

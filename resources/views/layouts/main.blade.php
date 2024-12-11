@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light">
 
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <link rel="shortcut icon" type="image/png" href="asset/img/logo.png" />
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -37,10 +39,14 @@
 
         <!-- JavaScript to toggle dark mode -->
         <script>
-            // Check for stored user theme preference
+            // Check for stored user theme preference, default to light if not set
             const currentMode = localStorage.getItem('theme') || 'light';
+
+            // Apply the correct theme when the page loads
             if (currentMode === 'dark') {
                 document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
             }
 
             // Toggle dark mode on button click (if you want a button to toggle it)

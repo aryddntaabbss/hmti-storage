@@ -8,11 +8,4 @@ export default defineConfig( {
             refresh: true,
         } ),
     ],
-    optimizeDeps: {
-        include: [
-            'jquery',           // Menambahkan jQuery
-            'datatables.net',    // Menambahkan DataTables
-            'datatables.net-dt', // Menambahkan CSS DataTables
-        ],
-    },
 } );

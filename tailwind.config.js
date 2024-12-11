@@ -17,8 +17,7 @@ export default {
         },
     },
 
-    // Menambahkan dark mode menggunakan class
-    darkMode: 'class', // Mengaktifkan dark mode dengan class .dark pada elemen root
+    darkMode: 'class',
 
     plugins: [ forms ],
 };
